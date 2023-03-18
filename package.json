@@ -43,7 +43,6 @@
       "@types/jasmine": "~4.3.0",
       "@typescript-eslint/eslint-plugin": "5.48.2",
       "@typescript-eslint/parser": "5.48.2",
-      "at-schematics-angular": "file:../ims-frontend/schematics",
       "eslint": "^8.33.0",
       "eslint-plugin-decorator-position": "^5.0.2",
       "eslint-plugin-jsdoc": "^40.0.3",
