@@ -1,23 +1,20 @@
-name: Angular Tests
+name: Karma Test
 
 on:
    push:
-      branches: [ main ]
-   pull_request:
+      branches:
+         - main
 
 jobs:
-   ng-test:
+   build:
       runs-on: ubuntu-latest
-      strategy:
-         matrix:
-            node-version: [ 14.x ]
       steps:
          -  uses: actions/checkout@v2
-         -  name: Use Node.js ${{ matrix.node-version }}
-            uses: actions/setup-node@v1
+         -  name: Use Node.js 16.x
+            uses: actions/setup-node@v2
             with:
-               node-version: ${{ matrix.node-version }}
-         -  name: npm ci
-            run: npm ci
-         -  name: Angular test
-            run: npm test -- --watch=false --browsers=ChromeHeadless
+               node-version: '16.x'
+         -  name: Install Dependencies
+            run: npm install
+         -  name: Run Karma Tests
+            run: npm run test
