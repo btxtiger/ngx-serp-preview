@@ -10,9 +10,10 @@ body.dark {
    --ngx-serp-tabs-border: #ebebeb;
    --ngx-serp-tabs-label: #5f6368;
    --ngx-serp-tabs-label-active: #4285f4;
+   width: 100%;
+   display: block;
 
    &__panel {
-      width: 100%;
       display: flex;
       align-items: stretch;
       border-bottom: 1px solid var(--ngx-serp-tabs-border);
