@@ -16,10 +16,6 @@ import { FormsModule } from '@angular/forms';
    imports: [
       BrowserModule,
       AppRoutingModule,
-      NgxSerpGoogleComponent,
-      NgxSerpBingComponent,
-      NgxSerpYahooComponent,
-      NgxSerpGoogleMobileComponent,
       NgxSerpTabsComponent,
       NgxMdIconModule,
       FormsModule,
