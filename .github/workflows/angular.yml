@@ -30,7 +30,7 @@ jobs:
             run: npm install
 
          -  name: Build Angular project
-            run: npm run build -- --prod
+            run: npm run build
 
          -  name: Cache test results
             uses: actions/cache@v2
