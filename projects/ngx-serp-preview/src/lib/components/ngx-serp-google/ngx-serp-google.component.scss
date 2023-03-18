@@ -1,0 +1,108 @@
+body.dark {
+   .ngx-serp-google {
+      --ngx-serp-google-site: #dadce0;
+      --ngx-serp-google-url: #bdc1c6;
+      --ngx-serp-google-title: #8ab4f8;
+      --ngx-serp-google-description: #bdc1c6;
+   }
+}
+
+.ngx-serp-google {
+   --ngx-serp-google-site: #202124;
+   --ngx-serp-google-url: #4d5156;
+   --ngx-serp-google-title: #1a0dab;
+   --ngx-serp-google-description: #4d5156;
+
+   font-family: arial, sans-serif;
+   display: block;
+
+   &__header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      &-icon {
+         margin-right: 12px;
+         background-color: #e2eeff;
+         height: 28px;
+         width: 28px;
+         border-radius: 50%;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+
+         .md-icon {
+            width: 18px;
+            height: 18px;
+            font-size: 18px;
+            path {
+               color: #0060f0;
+            }
+         }
+         img {
+            width: 18px;
+            height: auto;
+         }
+      }
+
+      &-title {
+         color: var(--ngx-serp-google-site);
+         font-size: 14px;
+         max-width: 300px;
+         display: block;
+         line-height: 20px;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+         overflow: hidden;
+      }
+
+      &-url {
+         font-size: 12px;
+         line-height: 18px;
+         color: var(--ngx-serp-google-url);
+         overflow: hidden;
+         text-overflow: ellipsis;
+         white-space: nowrap;
+         max-width: 330px;
+      }
+
+      &-menu {
+         align-self: flex-end;
+
+         .md-icon {
+            width: 18px;
+            height: 18px;
+            font-size: 18px;
+            position: relative;
+            top: 4px;
+            left: 4px;
+            path {
+               color: var(--ngx-serp-google-url);
+            }
+         }
+      }
+   }
+
+   &__title {
+      color: var(--ngx-serp-google-title);
+      max-width: 600px;
+      font-size: 20px;
+      font-weight: 400;
+      display: block;
+      line-height: 1.3;
+      margin-top: 6px;
+      margin-bottom: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+   }
+
+   &__description {
+      color: var(--ngx-serp-google-description);
+      display: block;
+      font-size: 14px;
+      line-height: 1.58;
+      word-wrap: break-word;
+      max-width: 600px;
+   }
+}

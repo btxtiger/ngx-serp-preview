@@ -1,104 +1,121 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
-    "ngx-serp-preview-demo": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
+   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+   "version": 1,
+   "newProjectRoot": "projects",
+   "projects": {
+      "ngx-serp-preview-demo": {
+         "projectType": "application",
+         "schematics": {
+            "@schematics/angular:component": {
+               "style": "scss"
+            }
+         },
+         "root": "",
+         "sourceRoot": "src",
+         "prefix": "app",
+         "architect": {
+            "build": {
+               "builder": "@angular-devkit/build-angular:browser",
+               "options": {
+                  "outputPath": "dist/ngx-serp-preview-demo",
+                  "index": "src/index.html",
+                  "main": "src/main.ts",
+                  "polyfills": ["zone.js"],
+                  "tsConfig": "tsconfig.app.json",
+                  "inlineStyleLanguage": "scss",
+                  "assets": ["src/favicon.ico", "src/assets"],
+                  "styles": ["src/styles.scss"],
+                  "scripts": []
+               },
+               "configurations": {
+                  "production": {
+                     "outputPath": "docs",
+                     "baseHref": "/ngx-serp-preview/",
+                     "budgets": [
+                        {
+                           "type": "initial",
+                           "maximumWarning": "500kb",
+                           "maximumError": "1mb"
+                        },
+                        {
+                           "type": "anyComponentStyle",
+                           "maximumWarning": "2kb",
+                           "maximumError": "4kb"
+                        }
+                     ],
+                     "outputHashing": "all"
+                  },
+                  "development": {
+                     "buildOptimizer": false,
+                     "optimization": false,
+                     "vendorChunk": true,
+                     "extractLicenses": false,
+                     "sourceMap": true,
+                     "namedChunks": true
+                  }
+               },
+               "defaultConfiguration": "production"
+            },
+            "serve": {
+               "builder": "@angular-devkit/build-angular:dev-server",
+               "configurations": {
+                  "production": {
+                     "browserTarget": "ngx-serp-preview-demo:build:production"
+                  },
+                  "development": {
+                     "browserTarget": "ngx-serp-preview-demo:build:development"
+                  }
+               },
+               "defaultConfiguration": "development"
+            },
+            "extract-i18n": {
+               "builder": "@angular-devkit/build-angular:extract-i18n",
+               "options": {
+                  "browserTarget": "ngx-serp-preview-demo:build"
+               }
+            },
+            "test": {
+               "builder": "@angular-devkit/build-angular:karma",
+               "options": {
+                  "polyfills": ["zone.js", "zone.js/testing"],
+                  "tsConfig": "tsconfig.spec.json",
+                  "inlineStyleLanguage": "scss",
+                  "assets": ["src/favicon.ico", "src/assets"],
+                  "styles": ["src/styles.scss"],
+                  "scripts": []
+               }
+            }
+         }
       },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/ngx-serp-preview-demo",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all"
+      "ngx-serp-preview": {
+         "projectType": "library",
+         "root": "projects/ngx-serp-preview",
+         "sourceRoot": "projects/ngx-serp-preview/src",
+         "prefix": "lib",
+         "architect": {
+            "build": {
+               "builder": "@angular-devkit/build-angular:ng-packagr",
+               "options": {
+                  "project": "projects/ngx-serp-preview/ng-package.json"
+               },
+               "configurations": {
+                  "production": {
+                     "tsConfig": "projects/ngx-serp-preview/tsconfig.lib.prod.json"
+                  },
+                  "development": {
+                     "tsConfig": "projects/ngx-serp-preview/tsconfig.lib.json"
+                  }
+               },
+               "defaultConfiguration": "production"
             },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+            "test": {
+               "builder": "@angular-devkit/build-angular:karma",
+               "options": {
+                  "tsConfig": "projects/ngx-serp-preview/tsconfig.spec.json",
+                  "polyfills": ["zone.js", "zone.js/testing"]
+               }
             }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "browserTarget": "ngx-serp-preview-demo:build:production"
-            },
-            "development": {
-              "browserTarget": "ngx-serp-preview-demo:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "ngx-serp-preview-demo:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
-          }
-        }
+         }
       }
-    }
-  }
+   }
 }

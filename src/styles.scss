@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'normalize.css/normalize.css';
+@import 'chota/dist/chota.css';
+
+:root {
+   --grid-maxWidth: 980px;
+}
+
+body.dark {
+   --bg-color: #232323;
+   --bg-secondary-color: #131316;
+   --font-color: #f5f5f5;
+   --color-grey: #ccc;
+   --color-darkGrey: #777;
+}

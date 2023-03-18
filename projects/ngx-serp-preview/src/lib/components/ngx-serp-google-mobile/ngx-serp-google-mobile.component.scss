@@ -1,0 +1,127 @@
+body.dark {
+   .ngx-serp-google-mobile {
+      --ngx-serp-google-mobile-site: #dadce0;
+      --ngx-serp-google-mobile-url: #bdc1c6;
+      --ngx-serp-google-mobile-title: #8ab4f8;
+      --ngx-serp-google-mobile-description: #bdc1c6;
+      --ngx-serp-google-mobile-card-gap: #34373c;
+      --ngx-serp-google-mobile-card-border: #26282b;
+   }
+}
+
+.ngx-serp-google-mobile {
+   --ngx-serp-google-mobile-site: #202124;
+   --ngx-serp-google-mobile-url: #4d5156;
+   --ngx-serp-google-mobile-title: #1558d6;
+   --ngx-serp-google-mobile-description: #4d5156;
+   --ngx-serp-google-mobile-card-gap: #f1f3f4;
+   --ngx-serp-google-mobile-card-border: #ebedef;
+
+   font-family: Roboto, Helvetica Neue, Arial, sans-serif;
+   display: block;
+
+   &__container {
+      max-width: 414px;
+      border-top: 7px solid var(--ngx-serp-google-mobile-card-gap);
+      border-bottom: 7px solid var(--ngx-serp-google-mobile-card-gap);
+   }
+
+   &__card {
+      border-top: 1px solid var(--ngx-serp-google-mobile-card-border);
+      border-bottom: 1px solid var(--ngx-serp-google-mobile-card-border);
+      padding: 15px 16px 12px 16px;
+   }
+
+   &__header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      margin-bottom: 11px;
+
+      &-icon {
+         margin-right: 12px;
+         background-color: #e2eeff;
+         height: 28px;
+         width: 28px;
+         border-radius: 50%;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+
+         .md-icon {
+            width: 18px;
+            height: 18px;
+            font-size: 18px;
+            path {
+               color: #0060f0;
+            }
+         }
+
+         img {
+            width: 18px;
+            height: auto;
+         }
+      }
+
+      &-title {
+         font-family: Google Sans, Roboto, Helvetica Neue, Arial, sans-serif;
+         color: var(--ngx-serp-google-mobile-site);
+         font-size: 14px;
+         max-width: 280px;
+         display: block;
+         line-height: 20px;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+         overflow: hidden;
+      }
+
+      &-url {
+         font-size: 12px;
+         line-height: 18px;
+         color: var(--ngx-serp-google-mobile-url);
+         overflow: hidden;
+         text-overflow: ellipsis;
+         white-space: nowrap;
+         max-width: 200px;
+      }
+
+      &-menu {
+         position: absolute;
+         right: 8px;
+         top: 0;
+
+         .md-icon {
+            width: 18px;
+            height: 18px;
+            font-size: 18px;
+            position: relative;
+            top: 4px;
+            left: 4px;
+            path {
+               color: var(--ngx-serp-google-mobile-url);
+            }
+         }
+      }
+   }
+
+   &__title {
+      font-family: Google Sans, Roboto, Helvetica Neue, Arial, sans-serif;
+      color: var(--ngx-serp-google-mobile-title);
+      font-size: 20px;
+      font-weight: 400;
+      display: block;
+      line-height: 1.3;
+      margin-top: 5px;
+      margin-bottom: 8px;
+   }
+
+   &__description {
+      color: var(--ngx-serp-google-mobile-description);
+      display: block;
+      font-size: 14px;
+      line-height: 1.58;
+      word-wrap: break-word;
+      max-width: 600px;
+   }
+}

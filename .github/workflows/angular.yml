@@ -1,0 +1,53 @@
+name: Angular Tests
+
+on:
+   push:
+      branches: [ main ]
+   pull_request:
+
+jobs:
+   build-and-test:
+      runs-on: ubuntu-latest
+
+      steps:
+         -  name: Checkout code
+            uses: actions/checkout@v2
+
+         -  name: Set up Node.js
+            uses: actions/setup-node@v2
+            with:
+               node-version: '14.x'
+
+         -  name: Set up Chrome
+            uses: actions/setup-chrome@v1
+
+         -  name: Cache dependencies
+            uses: actions/cache@v2
+            with:
+               path: ~/.npm
+               key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+               restore-keys: |
+                  ${{ runner.os }}-node-
+
+         -  name: Install dependencies
+            run: npm install
+
+         -  name: Build Angular project
+            run: npm run build -- --prod
+
+         -  name: Cache test results
+            uses: actions/cache@v2
+            with:
+               path: ./coverage
+               key: ${{ runner.os }}-node-coverage-${{ github.sha }}
+               restore-keys: |
+                  ${{ runner.os }}-node-coverage-
+
+         -  name: Run Angular tests
+            run: npm run test -- --code-coverage --no-watch --browsers=ChromeHeadless
+
+         -  name: Upload test results
+            uses: actions/upload-artifact@v2
+            with:
+               name: test-results
+               path: ./coverage

@@ -1,0 +1,30 @@
+{
+   "name": "ngx-serp-preview",
+   "version": "1.0.0",
+   "description": "SERP (Search Engine Result Page) Preview Component for Angular",
+   "author": "Jonas Gnioui <btxtiger@icloud.com>",
+   "license": "MIT",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/btxtiger/ngx-serp-preview"
+   },
+   "keywords": [
+      "angular",
+      "angular-component",
+      "ui",
+      "library",
+      "SERP",
+      "SEO",
+      "preview"
+   ],
+   "peerDependencies": {
+      "@angular/common": "^15.2.0",
+      "@angular/core": "^15.2.0",
+      "@mdi/js": ">=7.1.96",
+      "ngx-md-icon": ">=1.1.21"
+   },
+   "dependencies": {
+      "tslib": "^2.3.0"
+   },
+   "sideEffects": false
+}

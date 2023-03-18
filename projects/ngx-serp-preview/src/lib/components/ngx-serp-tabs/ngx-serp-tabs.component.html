@@ -1,0 +1,32 @@
+<div class="ngx-serp-tabs__panel">
+   <div class="ngx-serp-tabs__panel-btn" [class.active]="activeTabIndex === 0" (click)="activeTabIndex = 0">
+      <md-icon [icon]="icons.google"></md-icon>
+      <span class="ngx-serp-tabs__panel-label">Google</span>
+   </div>
+   <div class="ngx-serp-tabs__panel-btn" [class.active]="activeTabIndex === 1" (click)="activeTabIndex = 1">
+      <md-icon [icon]="icons.mobile"></md-icon>
+      <span class="ngx-serp-tabs__panel-label">Mobile</span>
+   </div>
+   <div class="ngx-serp-tabs__panel-btn" [class.active]="activeTabIndex === 2" (click)="activeTabIndex = 2">
+      <md-icon [icon]="icons.bing"></md-icon>
+      <span class="ngx-serp-tabs__panel-label">Bing</span>
+   </div>
+   <div class="ngx-serp-tabs__panel-btn" [class.active]="activeTabIndex === 3" (click)="activeTabIndex = 3">
+      <md-icon [icon]="icons.yahoo"></md-icon>
+      <span class="ngx-serp-tabs__panel-label">Yahoo</span>
+   </div>
+</div>
+
+<div class="ngx-serp-tabs__content">
+   <ng-container [ngSwitch]="activeTabIndex">
+      <ngx-serp-google *ngSwitchCase="0" [siteName]="siteName" [title]="title" [description]="description" [url]="url"
+                       [faviconUrl]="faviconUrl"></ngx-serp-google>
+
+      <ngx-serp-google-mobile *ngSwitchCase="1" [siteName]="siteName" [title]="title" [description]="description" [url]="url"
+                              [faviconUrl]="faviconUrl"></ngx-serp-google-mobile>
+
+      <ngx-serp-bing *ngSwitchCase="2" [title]="title" [description]="description" [url]="url"></ngx-serp-bing>
+
+      <ngx-serp-yahoo *ngSwitchCase="3" [title]="title" [description]="description" [url]="url"></ngx-serp-yahoo>
+   </ng-container>
+</div>

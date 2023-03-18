@@ -1,0 +1,58 @@
+body.dark {
+   .ngx-serp-tabs {
+      --ngx-serp-tabs-border: #3c4043;
+      --ngx-serp-tabs-label: #969ba1;
+      --ngx-serp-tabs-label-active: #8ab4f8;
+   }
+}
+
+.ngx-serp-tabs {
+   --ngx-serp-tabs-border: #ebebeb;
+   --ngx-serp-tabs-label: #5f6368;
+   --ngx-serp-tabs-label-active: #4285f4;
+
+   &__panel {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      border-bottom: 1px solid var(--ngx-serp-tabs-border);
+
+      &-label {
+      }
+
+      &-btn {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         height: 37px;
+         padding: 0 16px;
+         text-align: center;
+         text-decoration: none;
+         white-space: nowrap;
+         cursor: pointer;
+         box-sizing: border-box;
+         margin-right: 3px;
+         font-family: Google Sans, arial, sans-serif;
+         font-size: 14px;
+         color: var(--ngx-serp-tabs-label);
+         border-bottom: 3px solid transparent;
+
+         &.active {
+            color: var(--ngx-serp-tabs-label-active);
+            border-bottom: 3px solid var(--ngx-serp-tabs-label-active);
+         }
+
+         .md-icon {
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+            margin-right: 6px;
+         }
+      }
+   }
+
+   &__content {
+      padding: 20px 0;
+      //background-color: white;
+   }
+}

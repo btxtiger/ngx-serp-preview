@@ -1,0 +1,68 @@
+body.dark {
+   .ngx-serp-bing {
+      --ngx-serp-bing-url: #6fc088;
+      --ngx-serp-bing-title: #c58af9;
+      --ngx-serp-bing-description: #bdc1c6;
+   }
+}
+
+.ngx-serp-bing {
+   --ngx-serp-bing-url: #006d21;
+   --ngx-serp-bing-title: #1a0dab;
+   --ngx-serp-bing-description: #71777d;
+
+   font-family: Roboto, Helvetica, sans-serif;
+   display: block;
+
+   &__title {
+      color: var(--ngx-serp-bing-title);
+      max-width: 600px;
+      font-size: 20px;
+      font-weight: 400;
+      display: block;
+      line-height: 28px;
+      margin-top: 5px;
+      margin-bottom: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+   }
+
+   &__description {
+      color: var(--ngx-serp-bing-description);
+      display: block;
+      font-size: 14px;
+      line-height: 22px;
+      word-wrap: break-word;
+      max-width: 600px;
+
+      &-web {
+         margin-right: 2px;
+         border: 1px solid #ececec;
+         color: var(--ngx-serp-bing-description);
+         padding: 0 2px;
+         font-size: 11px;
+         vertical-align: middle;
+         line-height: 11px;
+         border-radius: 6px;
+         display: inline-block;
+         margin-bottom: 3px;
+      }
+   }
+
+   &__url {
+      font-size: 16px;
+      line-height: 22px;
+      color: var(--ngx-serp-bing-url);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 330px;
+
+      &-icon.md-icon {
+         width: 20px;
+         height: 20px;
+         font-size: 20px;
+      }
+   }
+}

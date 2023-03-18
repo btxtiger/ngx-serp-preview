@@ -1,0 +1,23 @@
+<div class="ngx-serp-google__header">
+   <div class="">
+      <div class="ngx-serp-google__header-icon">
+         <ng-container *ngIf="faviconUrl; else mdIcon">
+            <img [src]="faviconUrl" fill>
+         </ng-container>
+         <ng-template #mdIcon>
+            <md-icon [icon]="siteIcon"></md-icon>
+         </ng-template>
+      </div>
+   </div>
+   <div class="">
+      <div class="ngx-serp-google__header-title">{{ siteName }}</div>
+      <div class="ngx-serp-google__header-url">
+         {{ formattedUrl }}
+      </div>
+   </div>
+   <div class="ngx-serp-google__header-menu">
+      <md-icon [icon]="menuIcon" middle></md-icon>
+   </div>
+</div>
+<div class="ngx-serp-google__title">{{ formattedTitle }}</div>
+<div class="ngx-serp-google__description">{{ formattedDescription }}</div>

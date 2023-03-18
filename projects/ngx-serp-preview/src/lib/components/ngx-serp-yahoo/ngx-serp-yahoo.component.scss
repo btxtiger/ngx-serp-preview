@@ -1,0 +1,56 @@
+body.dark {
+   .ngx-serp-yahoo {
+      --ngx-serp-yahoo-url: #bec4d5;
+      --ngx-serp-yahoo-title: #c58af9;
+      --ngx-serp-yahoo-description: #bdc1c6;
+   }
+}
+
+.ngx-serp-yahoo {
+   --ngx-serp-yahoo-url: #202124;
+   --ngx-serp-yahoo-title: #1a0dab;
+   --ngx-serp-yahoo-description: #4d5156;
+
+   font-family: Roboto, Helvetica, sans-serif;
+   display: block;
+
+   &__title {
+      color: var(--ngx-serp-yahoo-title);
+      max-width: 600px;
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: 400;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 2px;
+   }
+
+   &__description {
+      color: var(--ngx-serp-yahoo-description);
+      display: block;
+      font-size: 14px;
+      line-height: 22px;
+      word-wrap: break-word;
+      max-width: 600px;
+   }
+
+   &__url {
+      font-size: 14px;
+      line-height: 20px;
+      padding-bottom: 4px;
+      color: var(--ngx-serp-yahoo-url);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 330px;
+
+      &-icon.md-icon {
+         width: 16px;
+         height: 16px;
+         font-size: 16px;
+         margin-left: -2px;
+      }
+   }
+}
