@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { NgxMdIconComponent, NgxMdIconModule } from "ngx-md-icon";
-import { NgxSerpTabsComponent } from "ngx-serp-preview";
+import { NgxSerpTabsComponent } from '../../projects/ngx-serp-preview/src/lib/components/ngx-serp-tabs/ngx-serp-tabs.component';
 
 describe('AppComponent', () => {
    beforeEach(async () => {
