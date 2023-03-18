@@ -6,45 +6,18 @@ on:
    pull_request:
 
 jobs:
-   build-and-test:
+   ng-test:
       runs-on: ubuntu-latest
-
+      strategy:
+         matrix:
+            node-version: [ 14.x ]
       steps:
-         -  name: Checkout code
-            uses: actions/checkout@v2
-
-         -  name: Set up Node.js
-            uses: actions/setup-node@v2
+         -  uses: actions/checkout@v2
+         -  name: Use Node.js ${{ matrix.node-version }}
+            uses: actions/setup-node@v1
             with:
-               node-version: '14.x'
-
-         -  name: Cache dependencies
-            uses: actions/cache@v2
-            with:
-               path: ~/.npm
-               key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-               restore-keys: |
-                  ${{ runner.os }}-node-
-
-         -  name: Install dependencies
-            run: npm install
-
-         -  name: Build Angular project
-            run: npm run build
-
-         -  name: Cache test results
-            uses: actions/cache@v2
-            with:
-               path: ./coverage
-               key: ${{ runner.os }}-node-coverage-${{ github.sha }}
-               restore-keys: |
-                  ${{ runner.os }}-node-coverage-
-
-         -  name: Run Angular tests
-            run: npm run test -- --configuration=ci
-
-         -  name: Upload test results
-            uses: actions/upload-artifact@v2
-            with:
-               name: test-results
-               path: ./coverage
+               node-version: ${{ matrix.node-version }}
+         -  name: npm ci
+            run: npm ci
+         -  name: Angular test
+            run: npm test -- --watch=false --browsers=ChromeHeadless
