@@ -17,8 +17,9 @@ body.dark {
    --ngx-serp-google-mobile-card-gap: #f1f3f4;
    --ngx-serp-google-mobile-card-border: #ebedef;
 
-   font-family: Roboto, Helvetica Neue, Arial, sans-serif;
    display: block;
+   font-family: Roboto, Helvetica Neue, Arial, sans-serif;
+   letter-spacing: normal;
 
    &__container {
       max-width: 414px;

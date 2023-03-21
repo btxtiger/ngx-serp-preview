@@ -11,8 +11,9 @@ body.dark {
    --ngx-serp-bing-title: #1a0dab;
    --ngx-serp-bing-description: #71777d;
 
-   font-family: Roboto, Helvetica, sans-serif;
    display: block;
+   font-family: Roboto, Helvetica, sans-serif;
+   letter-spacing: normal;
 
    &__title {
       color: var(--ngx-serp-bing-title);

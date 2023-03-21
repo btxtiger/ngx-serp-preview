@@ -13,8 +13,10 @@ body.dark {
    --ngx-serp-google-title: #1a0dab;
    --ngx-serp-google-description: #4d5156;
 
-   font-family: arial, sans-serif;
    display: block;
+   font-family: arial, sans-serif;
+   letter-spacing: normal;
+
 
    &__header {
       display: flex;

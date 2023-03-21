@@ -11,8 +11,9 @@ body.dark {
    --ngx-serp-yahoo-title: #1a0dab;
    --ngx-serp-yahoo-description: #4d5156;
 
-   font-family: Roboto, Helvetica, sans-serif;
    display: block;
+   font-family: Roboto, Helvetica, sans-serif;
+   letter-spacing: normal;
 
    &__title {
       color: var(--ngx-serp-yahoo-title);

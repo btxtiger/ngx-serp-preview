@@ -11,6 +11,7 @@
       "publish": "npm run build:demo && npm run build:lib && cd dist/ngx-serp-preview && npm publish",
       "format-prettier": "prettier --loglevel warn --write \"./{src,projects}/**/*.{ts,scss,json}\"",
       "test": "ng test",
+      "test:ci": "ng test --no-watch --no-progress --browsers=FirefoxHeadless",
       "lint": "ng lint"
    },
    "private": true,
