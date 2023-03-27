@@ -1,6 +1,6 @@
 {
    "name": "ngx-serp-preview",
-   "version": "1.0.4",
+   "version": "1.0.5",
    "description": "SERP (Search Engine Result Page) Preview Component for Angular",
    "author": "Jonas Gnioui <btxtiger@icloud.com>",
    "license": "MIT",
