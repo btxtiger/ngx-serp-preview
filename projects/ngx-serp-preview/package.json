@@ -1,6 +1,6 @@
 {
    "name": "ngx-serp-preview",
-   "version": "1.0.5",
+   "version": "1.0.6",
    "description": "SERP (Search Engine Result Page) Preview Component for Angular",
    "author": "Jonas Gnioui <btxtiger@icloud.com>",
    "license": "MIT",
@@ -18,8 +18,8 @@
       "preview"
    ],
    "peerDependencies": {
-      "@angular/common": "^15.0.0",
-      "@angular/core": "^15.0.0"
+      "@angular/common": "15 - 100",
+      "@angular/core": "15 - 100"
    },
    "dependencies": {
       "tslib": "^2.3.0",
